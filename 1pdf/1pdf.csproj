@@ -14,6 +14,18 @@
     <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
   </ItemGroup>
 
+  <!-- Embed pdfium.dll as a resource so it can be extracted at runtime in single-file mode -->
+  <Target Name="EmbedPdfium" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <PdfiumSource>$(NuGetPackageRoot)pdfiumviewer.native.x86_64.v8-xfa\2018.4.8.256\build\x64\pdfium.dll</PdfiumSource>
+    </PropertyGroup>
+    <Copy SourceFiles="$(PdfiumSource)" DestinationFolder="$(MSBuildProjectDirectory)" Condition="Exists('$(PdfiumSource)') And !Exists('$(MSBuildProjectDirectory)\pdfium.dll')" />
+  </Target>
+
+  <ItemGroup>
+    <EmbeddedResource Include="pdfium.dll" Condition="Exists('pdfium.dll')" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
