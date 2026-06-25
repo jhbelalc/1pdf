@@ -1,0 +1,56 @@
+name: .NET Build & Release
+
+on:
+  push:
+    branches: [ master, main, develop ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ master, main ]
+
+permissions:
+  contents: write
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0'
+        
+    - run: dotnet restore
+    
+    - run: dotnet build --configuration Release --no-restore
+      
+    - name: Publish
+      run: dotnet publish 1pdf/1pdf.csproj -c Release -o ./publish
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: 1pdf-build
+        path: ./publish/
+
+  create-release:
+    needs: build
+    runs-on: windows-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: actions/download-artifact@v4
+      with:
+        name: 1pdf-build
+        path: ./artifacts
+        
+    - uses: softprops/action-gh-release@v2
+      with:
+        files: ./artifacts/**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
