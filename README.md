@@ -20,17 +20,16 @@ Convert multiple PDF files into a single PDF with a simple and intuitive Windows
 ## 📋 Requirements
 
 - **Operating System**: Windows 10 or later
-- **.NET Framework**: .NET 10.0 or later (Windows)
 - **RAM**: Minimum 2 GB (4 GB recommended)
+- No additional dependencies — the runtime is bundled inside the executable
 
 ## 🚀 Installation
 
 ### Option 1: Download Release (Recommended)
 
 1. Go to [Releases](https://github.com/jhbelalc/1pdf/releases)
-2. Download the latest `1PDF-v*.exe` file
-3. Run the installer
-4. Follow the installation wizard
+2. Download the latest `1pdf.exe`
+3. Double-click to run — no installation needed
 
 ### Option 2: Build from Source
 
@@ -67,8 +66,8 @@ Convert multiple PDF files into a single PDF with a simple and intuitive Windows
 ## 🐛 Troubleshooting
 
 **Application won't start:**
-- Ensure .NET 10.0 is installed
-- This app requires Windows 10 or later
+- Ensure you are on Windows 10 or later
+- Try right-clicking the `.exe` and selecting "Run as administrator"
 
 **PDFs not merging:**
 - Verify all PDF files are not corrupted
