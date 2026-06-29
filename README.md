@@ -1,6 +1,7 @@
 # 1PDF - Merge Multiple PDFs into One
 
 Convert multiple PDF files into a single PDF with a simple and intuitive Windows desktop application.
+**The biggest benefit of this application is that you can use it locally and not expose your PDFs online, since for security reasons it is not good practice to use "free" online tools to merge PDFs.**
 
 ![Build](https://github.com/jhbelalc/1pdf/actions/workflows/dotnet.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
