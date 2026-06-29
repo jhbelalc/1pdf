@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-06-26
+
+### Fixed
+- PDF preview now works correctly in the standalone single-file executable
+- Resolved `DllNotFoundException` caused by `pdfium.dll` not being available at runtime in single-file publish mode
+- `pdfium.dll` is now embedded as a resource inside the executable and extracted to a temp folder on first run — no external files required
+
+### Changed
+- `Program.cs` updated to extract and load `pdfium.dll` from embedded resources before the app starts
+- `1pdf.csproj` updated with a `BeforeBuild` target that automatically copies `pdfium.dll` from the NuGet package cache and embeds it as a resource
+
+## [1.0.2] - 2026-06-26
+
+### Fixed
+- PDF merge was failing with `iText.Kernel.Exceptions.PdfException: Unknown PdfException`
+- Resolved `NotSupportedException` caused by missing BouncyCastle cryptography adapter required by iText7
+- Added `itext7.bouncy-castle-adapter` NuGet package which was missing from the project dependencies
+
 ## [1.0.1] - 2026-06-25
 
 ### Added
@@ -44,6 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - iText7 for PDF creation and manipulation
 - PdfiumViewer for PDF preview rendering
 
-[Unreleased]: https://github.com/jhbelalc/1pdf/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/jhbelalc/1pdf/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/jhbelalc/1pdf/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/jhbelalc/1pdf/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/jhbelalc/1pdf/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/jhbelalc/1pdf/releases/tag/v1.0.0
