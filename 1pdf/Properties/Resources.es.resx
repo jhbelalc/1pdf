@@ -124,7 +124,7 @@
     <value>Convertir 1 PDF</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar seleccionados</value>
   </data>
   <data name="ButtonSelectFiles" xml:space="preserve">
     <value>Seleccionar o arrastre y suelte</value>
@@ -170,6 +170,24 @@
   </data>
   <data name="AboutTagline" xml:space="preserve">
     <value>Une tus PDFs localmente. Tus archivos nunca salen de tu computador.</value>
+  </data>
+  <data name="PasswordTitle" xml:space="preserve">
+    <value>PDF protegido</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>El archivo "{0}" está protegido con contraseña. Ingrese la contraseña:</value>
+  </data>
+  <data name="PasswordWrong" xml:space="preserve">
+    <value>Contraseña incorrecta. Intente nuevamente.</value>
+  </data>
+  <data name="FileNotAdded" xml:space="preserve">
+    <value>El archivo "{0}" no fue agregado porque no se ingresó una contraseña válida.</value>
+  </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
   <data name="MissingParameterMessage" xml:space="preserve">
     <value>Por favor especificar el nombre del nuevo archivo PDF a crear.</value>

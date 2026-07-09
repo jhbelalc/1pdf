@@ -25,6 +25,7 @@ namespace _1pdf
         private const double ZoomStep = 1.25;
 
         private readonly string _filePath;
+        private readonly string _password;
         private readonly LocalizationService _localization;
 
         private readonly Panel _scrollPanel;
@@ -44,9 +45,10 @@ namespace _1pdf
         private int _currentPage = 1;
         private double _zoom = 1.0;
 
-        public PdfViewerForm(string filePath, LocalizationService localization)
+        public PdfViewerForm(string filePath, LocalizationService localization, string password = null)
         {
             _filePath = filePath;
+            _password = password;
             _localization = localization;
 
             Text = Path.GetFileName(filePath);
@@ -188,7 +190,7 @@ namespace _1pdf
         {
             try
             {
-                _document = await Task.Run(() => PdfiumPdfDocument.Load(_filePath));
+                _document = await Task.Run(() => PdfiumPdfDocument.Load(_filePath, _password));
 
                 if (IsDisposed)
                 {
