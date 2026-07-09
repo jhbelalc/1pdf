@@ -136,9 +136,6 @@
   <data name="ButtonDown" xml:space="preserve">
     <value>Move Down</value>
   </data>
-  <data name="ButtonFile" xml:space="preserve">
-    <value>Select File</value>
-  </data>
   <data name="ButtonGenerate" xml:space="preserve">
     <value>Convert to 1 PDF</value>
   </data>
@@ -166,8 +163,17 @@
   <data name="LabelName" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="LabelPage" xml:space="preserve">
-    <value>Go to page</value>
+  <data name="LabelPages" xml:space="preserve">
+    <value>{0} of {1}</value>
+  </data>
+  <data name="FormTitle" xml:space="preserve">
+    <value>Merge PDFs into one</value>
+  </data>
+  <data name="ViewerLoading" xml:space="preserve">
+    <value>Loading PDF...</value>
+  </data>
+  <data name="ViewerLoadError" xml:space="preserve">
+    <value>The file {0} could not be opened.</value>
   </data>
   <data name="MissingParameterMessage" xml:space="preserve">
     <value>Please specify the name of the new PDF file to be created.</value>

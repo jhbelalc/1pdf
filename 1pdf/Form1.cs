@@ -19,6 +19,8 @@ namespace _1pdf
         private readonly PdfPreviewService _previewService = new PdfPreviewService();
         private readonly LocalizationService _localization = new LocalizationService();
 
+        private int _totalPages;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace _1pdf
             listBox1.DragEnter += ListBox1_DragEnter;
             listBox1.DragDrop += ListBox1_DragDrop;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listBox1.MouseDoubleClick += OpenViewer_DoubleClick;
+            pictureBox1.DoubleClick += OpenViewer_DoubleClick;
         }
 
         #region Localization
@@ -50,14 +54,14 @@ namespace _1pdf
         {
             try
             {
+                Text = _localization.GetString("FormTitle");
                 btnRemove.Text = _localization.GetString("ButtonRemove");
-                btnArchivo.Text = _localization.GetString("ButtonFile");
                 btnArriba.Text = _localization.GetString("ButtonUp");
                 btnAbajo.Text = _localization.GetString("ButtonDown");
                 lblNombre.Text = _localization.GetString("LabelName");
                 btnSelectFiles.Text = _localization.GetString("ButtonSelectFiles");
-                label1.Text = _localization.GetString("LabelPages");
                 btnGenerar.Text = _localization.GetString("ButtonGenerate");
+                UpdatePageLabel();
             }
             catch (Exception ex)
             {
@@ -225,11 +229,27 @@ namespace _1pdf
 
         #region Preview
 
+        private void OpenViewer_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem == null) return;
+
+            var viewer = new PdfViewerForm(listBox1.SelectedItem.ToString(), _localization);
+            viewer.Show();
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
-                ShowPreview(listBox1.SelectedItem.ToString(), 1);
+                if (numericUpDownPage.Value != 1)
+                {
+                    // Triggers numericUpDownPage_ValueChanged, which renders page 1.
+                    numericUpDownPage.Value = 1;
+                }
+                else
+                {
+                    ShowPreview(listBox1.SelectedItem.ToString(), 1);
+                }
             }
         }
 
@@ -248,7 +268,9 @@ namespace _1pdf
                 var result = _previewService.RenderPage(
                     filePath, pageNumber, pictureBox1.Width, pictureBox1.Height);
 
+                _totalPages = result.TotalPages;
                 numericUpDownPage.Maximum = result.TotalPages;
+                UpdatePageLabel();
 
                 if (!result.IsValidPage)
                 {
@@ -270,6 +292,13 @@ namespace _1pdf
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void UpdatePageLabel()
+        {
+            label1.Text = _totalPages > 0
+                ? _localization.GetString("LabelPages", (int)numericUpDownPage.Value, _totalPages)
+                : string.Empty;
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)

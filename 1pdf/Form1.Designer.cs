@@ -225,7 +225,7 @@ namespace _1pdf
             Controls.Add(btnSelectFiles);
             Controls.Add(btnGenerar);
             Name = "Form1";
-            Text = "Unirs PDFs en uno solo. ";
+            Text = "Unir PDFs en uno solo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPage).EndInit();
             ResumeLayout(false);

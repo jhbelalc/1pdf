@@ -120,9 +120,6 @@
   <data name="ButtonDown" xml:space="preserve">
     <value>Bajar</value>
   </data>
-  <data name="ButtonFile" xml:space="preserve">
-    <value>Seleccionar Archivo</value>
-  </data>
   <data name="ButtonGenerate" xml:space="preserve">
     <value>Convertir 1 PDF</value>
   </data>
@@ -150,8 +147,17 @@
   <data name="LabelName" xml:space="preserve">
     <value>Nombre del Archivo</value>
   </data>
-  <data name="LabelPage" xml:space="preserve">
-    <value>Ir a la página</value>
+  <data name="LabelPages" xml:space="preserve">
+    <value>{0} de {1}</value>
+  </data>
+  <data name="FormTitle" xml:space="preserve">
+    <value>Unir PDFs en uno solo</value>
+  </data>
+  <data name="ViewerLoading" xml:space="preserve">
+    <value>Cargando PDF...</value>
+  </data>
+  <data name="ViewerLoadError" xml:space="preserve">
+    <value>El archivo {0} no pudo ser abierto.</value>
   </data>
   <data name="MissingParameterMessage" xml:space="preserve">
     <value>Por favor especificar el nombre del nuevo archivo PDF a crear.</value>
