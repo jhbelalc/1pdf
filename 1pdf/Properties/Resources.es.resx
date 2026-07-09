@@ -159,6 +159,18 @@
   <data name="ViewerLoadError" xml:space="preserve">
     <value>El archivo {0} no pudo ser abierto.</value>
   </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Acerca de 1PDF</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versión {0}</value>
+  </data>
+  <data name="AboutDevelopedBy" xml:space="preserve">
+    <value>Desarrollado por</value>
+  </data>
+  <data name="AboutTagline" xml:space="preserve">
+    <value>Une tus PDFs localmente. Tus archivos nunca salen de tu computador.</value>
+  </data>
   <data name="MissingParameterMessage" xml:space="preserve">
     <value>Por favor especificar el nombre del nuevo archivo PDF a crear.</value>
   </data>

@@ -48,6 +48,7 @@ namespace _1pdf
             numericUpDownPage = new NumericUpDown();
             label1 = new Label();
             comboBoxLanguage = new ComboBox();
+            btnAbout = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPage).BeginInit();
             SuspendLayout();
@@ -205,12 +206,24 @@ namespace _1pdf
             comboBoxLanguage.Name = "comboBoxLanguage";
             comboBoxLanguage.Size = new System.Drawing.Size(121, 23);
             comboBoxLanguage.TabIndex = 10;
-            // 
+            //
+            // btnAbout
+            //
+            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAbout.Location = new System.Drawing.Point(615, 413);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new System.Drawing.Size(150, 50);
+            btnAbout.TabIndex = 11;
+            btnAbout.Text = "About 1PDF";
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
+            //
             // Form1
-            // 
+            //
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(941, 471);
+            Controls.Add(btnAbout);
             Controls.Add(comboBoxLanguage);
             Controls.Add(label1);
             Controls.Add(numericUpDownPage);
@@ -247,6 +260,7 @@ namespace _1pdf
         private NumericUpDown numericUpDownPage;
         private Label label1;
         private ComboBox comboBoxLanguage;
+        private Button btnAbout;
     }
 }
 

@@ -50,6 +50,7 @@ namespace _1pdf
             _localization = localization;
 
             Text = Path.GetFileName(filePath);
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             StartPosition = FormStartPosition.CenterScreen;
             Size = new Size(900, 700);
             MinimumSize = new Size(400, 300);

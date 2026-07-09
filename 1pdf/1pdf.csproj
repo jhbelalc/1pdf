@@ -5,6 +5,8 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <RootNamespace>_1pdf</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

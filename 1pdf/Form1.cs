@@ -24,6 +24,7 @@ namespace _1pdf
         public Form1()
         {
             InitializeComponent();
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             InitializeLanguageSelector();
             ApplyLocalization();
 
@@ -61,11 +62,20 @@ namespace _1pdf
                 lblNombre.Text = _localization.GetString("LabelName");
                 btnSelectFiles.Text = _localization.GetString("ButtonSelectFiles");
                 btnGenerar.Text = _localization.GetString("ButtonGenerate");
+                btnAbout.Text = _localization.GetString("AboutTitle");
                 UpdatePageLabel();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error applying localization: " + ex.Message);
+            }
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            using (var about = new AboutForm(_localization))
+            {
+                about.ShowDialog(this);
             }
         }
 
