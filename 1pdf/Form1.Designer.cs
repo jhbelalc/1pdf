@@ -48,6 +48,7 @@ namespace _1pdf
             numericUpDownPage = new NumericUpDown();
             label1 = new Label();
             comboBoxLanguage = new ComboBox();
+            btnAbout = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPage).BeginInit();
             SuspendLayout();
@@ -62,6 +63,7 @@ namespace _1pdf
             btnGenerar.Size = new System.Drawing.Size(150, 50);
             btnGenerar.TabIndex = 0;
             btnGenerar.Text = "Convertir 1 PDF";
+            btnGenerar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGenerar.UseVisualStyleBackColor = true;
             btnGenerar.Click += button1_Click;
             // 
@@ -79,6 +81,7 @@ namespace _1pdf
             btnSelectFiles.Size = new System.Drawing.Size(150, 50);
             btnSelectFiles.TabIndex = 2;
             btnSelectFiles.Text = "Seleccionar o arrastre y suelte";
+            btnSelectFiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSelectFiles.UseVisualStyleBackColor = true;
             btnSelectFiles.Click += button2_Click;
             // 
@@ -121,6 +124,7 @@ namespace _1pdf
             listBox1.ItemHeight = 15;
             listBox1.Location = new System.Drawing.Point(12, 12);
             listBox1.Name = "listBox1";
+            listBox1.SelectionMode = SelectionMode.MultiExtended;
             listBox1.Size = new System.Drawing.Size(597, 169);
             listBox1.TabIndex = 6;
             // 
@@ -134,6 +138,7 @@ namespace _1pdf
             btnRemove.Size = new System.Drawing.Size(150, 50);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Borrar";
+            btnRemove.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRemove.UseVisualStyleBackColor = true;
             btnRemove.Click += btnRemove_Click;
             // 
@@ -147,6 +152,7 @@ namespace _1pdf
             btnAbajo.Size = new System.Drawing.Size(150, 50);
             btnAbajo.TabIndex = 7;
             btnAbajo.Text = "Abajo";
+            btnAbajo.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAbajo.UseVisualStyleBackColor = true;
             btnAbajo.Click += btnAbajo_Click;
             // 
@@ -160,6 +166,7 @@ namespace _1pdf
             btnArriba.Size = new System.Drawing.Size(150, 50);
             btnArriba.TabIndex = 7;
             btnArriba.Text = "Arriba";
+            btnArriba.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnArriba.UseVisualStyleBackColor = true;
             btnArriba.Click += btnArriba_Click;
             // 
@@ -205,12 +212,25 @@ namespace _1pdf
             comboBoxLanguage.Name = "comboBoxLanguage";
             comboBoxLanguage.Size = new System.Drawing.Size(121, 23);
             comboBoxLanguage.TabIndex = 10;
-            // 
+            //
+            // btnAbout
+            //
+            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAbout.Location = new System.Drawing.Point(615, 413);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new System.Drawing.Size(150, 50);
+            btnAbout.TabIndex = 11;
+            btnAbout.Text = "About 1PDF";
+            btnAbout.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
+            //
             // Form1
-            // 
+            //
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(941, 471);
+            Controls.Add(btnAbout);
             Controls.Add(comboBoxLanguage);
             Controls.Add(label1);
             Controls.Add(numericUpDownPage);
@@ -225,7 +245,7 @@ namespace _1pdf
             Controls.Add(btnSelectFiles);
             Controls.Add(btnGenerar);
             Name = "Form1";
-            Text = "Unirs PDFs en uno solo. ";
+            Text = "Unir PDFs en uno solo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPage).EndInit();
             ResumeLayout(false);
@@ -247,6 +267,7 @@ namespace _1pdf
         private NumericUpDown numericUpDownPage;
         private Label label1;
         private ComboBox comboBoxLanguage;
+        private Button btnAbout;
     }
 }
 

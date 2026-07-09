@@ -53,6 +53,14 @@ namespace _1pdf.Models
                 .Equals(".pdf", StringComparison.OrdinalIgnoreCase));
         }
 
+        /// <summary>
+        /// Removes a file by its path. No-op when not present.
+        /// </summary>
+        public void Remove(string path)
+        {
+            _files.Remove(path);
+        }
+
         public void RemoveAt(int index)
         {
             if (index >= 0 && index < _files.Count)
@@ -81,6 +89,24 @@ namespace _1pdf.Models
             if (index < 0 || index >= _files.Count - 1) return index;
             (_files[index + 1], _files[index]) = (_files[index], _files[index + 1]);
             return index + 1;
+        }
+
+        /// <summary>
+        /// Moves the item at <paramref name="fromIndex"/> to
+        /// <paramref name="toIndex"/> (clamped to the list bounds).
+        /// Returns the index where the item ended up.
+        /// </summary>
+        public int Move(int fromIndex, int toIndex)
+        {
+            if (fromIndex < 0 || fromIndex >= _files.Count) return fromIndex;
+
+            toIndex = Math.Max(0, Math.Min(_files.Count - 1, toIndex));
+            if (toIndex == fromIndex) return fromIndex;
+
+            string item = _files[fromIndex];
+            _files.RemoveAt(fromIndex);
+            _files.Insert(toIndex, item);
+            return toIndex;
         }
 
         /// <summary>

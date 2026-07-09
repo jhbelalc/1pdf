@@ -120,14 +120,11 @@
   <data name="ButtonDown" xml:space="preserve">
     <value>Bajar</value>
   </data>
-  <data name="ButtonFile" xml:space="preserve">
-    <value>Seleccionar Archivo</value>
-  </data>
   <data name="ButtonGenerate" xml:space="preserve">
     <value>Convertir 1 PDF</value>
   </data>
   <data name="ButtonRemove" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar seleccionados</value>
   </data>
   <data name="ButtonSelectFiles" xml:space="preserve">
     <value>Seleccionar o arrastre y suelte</value>
@@ -150,8 +147,47 @@
   <data name="LabelName" xml:space="preserve">
     <value>Nombre del Archivo</value>
   </data>
-  <data name="LabelPage" xml:space="preserve">
-    <value>Ir a la página</value>
+  <data name="LabelPages" xml:space="preserve">
+    <value>{0} de {1}</value>
+  </data>
+  <data name="FormTitle" xml:space="preserve">
+    <value>Unir PDFs en uno solo</value>
+  </data>
+  <data name="ViewerLoading" xml:space="preserve">
+    <value>Cargando PDF...</value>
+  </data>
+  <data name="ViewerLoadError" xml:space="preserve">
+    <value>El archivo {0} no pudo ser abierto.</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Acerca de 1PDF</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versión {0}</value>
+  </data>
+  <data name="AboutDevelopedBy" xml:space="preserve">
+    <value>Desarrollado por</value>
+  </data>
+  <data name="AboutTagline" xml:space="preserve">
+    <value>Une tus PDFs localmente. Tus archivos nunca salen de tu computador.</value>
+  </data>
+  <data name="PasswordTitle" xml:space="preserve">
+    <value>PDF protegido</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>El archivo "{0}" está protegido con contraseña. Ingrese la contraseña:</value>
+  </data>
+  <data name="PasswordWrong" xml:space="preserve">
+    <value>Contraseña incorrecta. Intente nuevamente.</value>
+  </data>
+  <data name="FileNotAdded" xml:space="preserve">
+    <value>El archivo "{0}" no fue agregado porque no se ingresó una contraseña válida.</value>
+  </data>
+  <data name="ButtonOk" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
   <data name="MissingParameterMessage" xml:space="preserve">
     <value>Por favor especificar el nombre del nuevo archivo PDF a crear.</value>

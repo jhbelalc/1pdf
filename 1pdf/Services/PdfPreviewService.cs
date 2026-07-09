@@ -33,9 +33,10 @@ namespace _1pdf.Services
         /// <param name="pageNumber">1-based page number.</param>
         /// <param name="width">Target render width in pixels.</param>
         /// <param name="height">Target render height in pixels.</param>
-        public PreviewResult RenderPage(string filePath, int pageNumber, int width, int height)
+        /// <param name="password">Password for protected files, or null.</param>
+        public PreviewResult RenderPage(string filePath, int pageNumber, int width, int height, string password = null)
         {
-            using (var document = PdfiumPdfDocument.Load(filePath))
+            using (var document = PdfiumPdfDocument.Load(filePath, password))
             {
                 int totalPages = document.PageCount;
 

@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -49,6 +50,14 @@ namespace _1pdf.Services
         public string GetString(string key)
         {
             return _resourceManager.GetString(key, CurrentCulture) ?? key;
+        }
+
+        /// <summary>
+        /// Gets an image resource by key, or null when not found.
+        /// </summary>
+        public Image GetImage(string key)
+        {
+            return _resourceManager.GetObject(key, CurrentCulture) as Image;
         }
 
         /// <summary>
