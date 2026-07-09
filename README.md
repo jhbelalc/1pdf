@@ -4,9 +4,14 @@ Convert multiple PDF files into a single PDF with a simple and intuitive Windows
 **The biggest benefit of this application is that you can use it locally and not expose your PDFs online, since for security reasons it is not good practice to use "free" online tools to merge PDFs.**
 
 ![Build](https://github.com/jhbelalc/1pdf/actions/workflows/dotnet.yml/badge.svg)
+[![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/download/dotnet/10.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Main Screen 1PDF](1pdf/Resources/1%20PDF%20Main%20Screen%20with%20Preview.png)
+![Main Screen 1PDF](1pdf/Resources/1%20PDF%20Main%20Screen%20with%20Preview%20v2.png)
+
+Double-click any file in the list to inspect it in its own preview window — open as many as you need side by side, with page navigation and zoom:
+
+![Multiple preview windows](1pdf/Resources/1PDF%20multiple%20preview%20screens.png)
 
 ## ✨ Features
 
